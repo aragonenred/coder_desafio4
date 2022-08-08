@@ -1,0 +1,26 @@
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef>NOMBRE</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.nombre + ' ' + element.apellido }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="documento">
+    <mat-header-cell *matHeaderCellDef>DOCUMENTO</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.documento }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef>EMAIL</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.email }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="edad">
+    <mat-header-cell *matHeaderCellDef>EDAD</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.edad }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="pais">
+    <mat-header-cell *matHeaderCellDef>PAIS</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.pais }} </mat-cell>
+  </ng-container>
+
+
+  <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
+</mat-table>
