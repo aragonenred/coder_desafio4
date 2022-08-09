@@ -16,6 +16,7 @@ import{MatTableModule} from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EdadPipe } from './pipes/edad.pipe';
 import { NombreApellidoPipe } from './pipes/nombre-apellido.pipe';
+import { PaisPipe } from './pipes/pais.pipe';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { NombreApellidoPipe } from './pipes/nombre-apellido.pipe';
     AlumnosTablaComponent,
     EdadPipe,
     NombreApellidoPipe,
+    PaisPipe,
 
   ],
   imports: [

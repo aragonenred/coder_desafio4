@@ -1,8 +1,8 @@
 export interface Alumnos {
   nombre:string;
   apellido:string;
-  documento: number;
+  documento: string;
   email: string;
-  edad:number;
+  nacimiento:string;
   pais: string;
 }

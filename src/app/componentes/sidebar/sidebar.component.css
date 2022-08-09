@@ -23,6 +23,7 @@ h1, h2, h3, h4 {
   font-family: 'Poppins', sans-serif;
   color: antiquewhite;
 }
+
 .sidebar-header  h3{
   margin: 0 auto;
 }
@@ -32,6 +33,7 @@ h1, h2, h3, h4 {
   width: 100%;
   color: antiquewhite;
   font-size: 14px;
+  align-items: center;
 }
 
 .foto{
@@ -58,11 +60,13 @@ ul li{
   font-family: 'Poppins', sans-serif;
   padding: 10px 0 10px 25px;
   transition: all ease-out 0.1s;
-  color: rgb(219, 212, 202);
+  /*color: rgb(219, 212, 202);*/
+  color: antiquewhite;
+
 
 }
-ul li:hover{
+ul a li:hover{
   background-color: #4ba1d3;
   color: #2e323e;
-
 }
+

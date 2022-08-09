@@ -24,5 +24,23 @@ h1, h2, h3, h4{
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius:5px;
   min-height: calc(100vh - 60px);
-  margin: 10px auto;
+  min-width: calc(100vw - 30%);
+  margin: 10px auto 20px auto;
+}
+
+.alert-text{
+  color:red;
+  font-size: 12px;
+  margin: 0;
+}
+.none{
+  display: none;
+}
+.valid-icon{
+  color: rgba(46, 221, 46, 0.651);
+  transition: all 0.8s ease;
+}
+.invalid-icon{
+  color: rgba(247, 34, 34, 0.651);
+  transition: all 0.8s ease;
 }

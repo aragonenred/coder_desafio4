@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlumnosTablaComponent } from '../alumnos-tabla/alumnos-tabla.component';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Alumnos } from '../../interfaces/alumnos';
+
 
 @Component({
   selector: 'app-content',
@@ -21,16 +23,14 @@ export class ContentComponent implements OnInit {
     pais: new FormControl('',[Validators.required]),
   });
 
+  alumno!:Alumnos;
 
   constructor() { }
-
   ngOnInit(): void {
-
   }
 
   agregarAlumno(){
-      console.log("clicka");
-      let alumno = {
+    this.alumno = {
             nombre: this.formulario.get('nombre')?.value,
             apellido: this.formulario.get('apellido')?.value,
             documento: this.formulario.get('documento')?.value,
@@ -38,11 +38,12 @@ export class ContentComponent implements OnInit {
             nacimiento: this.formulario.get('nacimiento')?.value,
             pais: this.formulario.get('pais')?.value
           };
-
-      if(this.formulario.status =='VALID'){
-        this.tabla?.actualizaTabla(alumno);
-      }
-
+    if(this.formulario.status =='VALID'){
+      this.tabla?.actualizaTabla(this.alumno);
+      this.formulario.reset();
+    }else{
+      alert('Opps! hay datos que te faltan completar 😕')
+    }
   }
 
 }

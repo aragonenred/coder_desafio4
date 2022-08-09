@@ -9,7 +9,7 @@
   </div>
 </div>
 <div class="icon-menu" >
-  <button (click)="menu()" mat-icon-button color="secondary" aria-label="Example icon button with a menu icon">
+  <button (click)="toggleMenuButton()" mat-icon-button color="secondary" aria-label="Example icon button with a menu icon">
     <mat-icon>menu</mat-icon>
   </button>
 </div>
@@ -17,14 +17,14 @@
   <div class="row m-0 p-0" >
     <div class="d-flex subtitle">
       <mat-icon class="mr-1" >apps</mat-icon>
-      <h3 class="m-0 " style="font-size: 14px;">Administrar </h3>
+      <h3 class="m-0 " style="font-size: 14px; ">Administrar </h3>
     </div>
 
     <div class="divisor"></div>
     <ul>
-      <li>Alumnos</li>
-      <li>Cursos</li>
-      <li>Clases</li>
+      <a href="#" style="text-decoration:none;"><li>🎓 Alumnos</li></a>
+      <a href="#" style="text-decoration:none;"><li>📚 Clases</li></a>
+      <a href="#" style="text-decoration:none;"><li>📋 Cursos</li></a>
     </ul>
 
     <div class="d-flex subtitle">

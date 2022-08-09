@@ -1,8 +1,13 @@
 <div class="mat-elevation-z8 mt-3 mb-3" >
+  <mat-form-field class="ml-3 mt-1">
+    <mat-label>Buscar</mat-label>
+    <input type="text" (keyup)="filtrar($event)" matInput>
+  </mat-form-field>
+
   <mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="nombre">
-      <mat-header-cell *matHeaderCellDef > NOMBRE</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element |nombreApellido}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef > NOMBRE  </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element |nombreApellido }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="documento">
       <mat-header-cell *matHeaderCellDef>DOCUMENTO</mat-header-cell>
@@ -18,7 +23,7 @@
     </ng-container>
     <ng-container matColumnDef="pais">
       <mat-header-cell *matHeaderCellDef>PAIS</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.pais }} </mat-cell>
+      <mat-cell *matCellDef="let element"><img src="{{(element.pais |pais).getAttribute('src')}}" style="max-width:15px; margin-right: 5px;"> {{element.pais}}</mat-cell>
     </ng-container>
 
 
