@@ -1,12 +1,23 @@
+@media(max-width:768px){
+    .sidebar-header{
+    margin: 0!important;
+  }
+
+  .icon-menu{
+    display: inline-block!important ;
+  }
+}
+
+.icon-menu{
+  display: none;
+}
 .sidebar-header{
   height: 150px;
   width: 100%;
   align-items: center;
   background-color: #32419c;
   color: antiquewhite;
-  margin: 0 0 40px 0;
-
-
+  margin: 0 0 40px 0
 }
 h1, h2, h3, h4 {
   font-family: 'Poppins', sans-serif;

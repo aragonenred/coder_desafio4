@@ -11,5 +11,13 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  hidden:boolean = true;
+  menu(){
+    if(this.hidden===true){
+      this.hidden = false;
+    }else{
+      this.hidden= true
+    }
+  }
 
 }

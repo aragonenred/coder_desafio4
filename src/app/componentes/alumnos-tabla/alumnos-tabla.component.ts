@@ -22,11 +22,17 @@ export class AlumnosTablaComponent implements OnInit {
 
   @Input() parentMensaje?: any;
 
-  columnas:string[] = ['nombre', 'documento', 'email', 'edad', 'pais'];
+  columnas:string[] = ['nombre', 'documento', 'email', 'nacimiento', 'pais'];
   alumnos: Alumnos[]=[
-    {nombre: "Maria Ana", apellido: "Fernandez", documento: "18613421", email: "ana.maria@gmail.com", nacimiento: "23", pais: "Argentina"},
-    {nombre: "Juan Alberto", apellido: "Paez", documento: "23615487", email: "juan@gmail.com", nacimiento: "29", pais: "Uruguay"},
-    {nombre: "Mauro Fernando", apellido: "Alvarez", documento: "44895678", email: "mauro@gmail.com.ar", nacimiento: "18", pais: "Paraguay"}
+    {nombre: "Maria Ana", apellido: "Fernandez", documento: "18613421", email: "ana.maria@gmail.com", nacimiento: "1988-01-23", pais: "Argentina"},
+    {nombre: "Juan Alberto", apellido: "Paez", documento: "23615487", email: "juan@gmail.com", nacimiento: "2001-09-10", pais: "Uruguay"},
+    {nombre: "Mauro Fernando", apellido: "Alvarez", documento: "44895678", email: "mauro@gmail.com.ar", nacimiento: "1995-09-11", pais: "Paraguay"},
+    {nombre: "Maria Ana", apellido: "Fernandez", documento: "18613421", email: "ana.maria@gmail.com", nacimiento: "2003-01-09", pais: "Argentina"},
+    {nombre: "Juan Alberto", apellido: "Paez", documento: "23615487", email: "juan@gmail.com", nacimiento: "1981-09-29", pais: "Uruguay"},
+    {nombre: "Mauro Fernando", apellido: "Alvarez", documento: "44895678", email: "mauro@gmail.com.ar", nacimiento: "1997-02-16", pais: "Paraguay"},
+    {nombre: "Maria Ana", apellido: "Fernandez", documento: "18613421", email: "ana.maria@gmail.com", nacimiento: "1998-09-01", pais: "Argentina"},
+    {nombre: "Juan Alberto", apellido: "Paez", documento: "23615487", email: "juan@gmail.com", nacimiento: "1998-09-01", pais: "Uruguay"},
+    {nombre: "Mauro Fernando", apellido: "Alvarez", documento: "44895678", email: "mauro@gmail.com.ar", nacimiento: "1998-09-01", pais: "Paraguay"}
     ];
 
 

@@ -17,7 +17,7 @@ export class ContentComponent implements OnInit {
     apellido: new FormControl('', [Validators.required]),
     documento: new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.maxLength(8)]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    edad: new FormControl('', [Validators.required]),
+    nacimiento: new FormControl('', [Validators.required]),
     pais: new FormControl('',[Validators.required]),
   });
 
@@ -35,11 +35,10 @@ export class ContentComponent implements OnInit {
             apellido: this.formulario.get('apellido')?.value,
             documento: this.formulario.get('documento')?.value,
             email: this.formulario.get('email')?.value,
-            nacimiento: this.formulario.get('edad')?.value,
+            nacimiento: this.formulario.get('nacimiento')?.value,
             pais: this.formulario.get('pais')?.value
           };
 
-      console.log(this.formulario);
       if(this.formulario.status =='VALID'){
         this.tabla?.actualizaTabla(alumno);
       }

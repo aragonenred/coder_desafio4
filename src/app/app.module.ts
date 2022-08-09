@@ -14,7 +14,8 @@ import{MatSelectModule} from '@angular/material/select';
 import { AlumnosTablaComponent } from './componentes/alumnos-tabla/alumnos-tabla.component';
 import{MatTableModule} from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { EdadPipe } from './pipes/edad.pipe';
+import { NombreApellidoPipe } from './pipes/nombre-apellido.pipe';
 
 
 @NgModule({
@@ -23,7 +24,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     SidebarComponent,
     ContentComponent,
-    AlumnosTablaComponent
+    AlumnosTablaComponent,
+    EdadPipe,
+    NombreApellidoPipe,
+
   ],
   imports: [
     BrowserModule,

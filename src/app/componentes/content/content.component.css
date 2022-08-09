@@ -1,5 +1,4 @@
 
-
 form{
   border-radius: 10px;
   padding: 10px 30px;
@@ -11,4 +10,19 @@ input, button{
 }
 h1, h2, h3, h4{
   font-family: 'Poppins', sans-serif;
+}
+
+@media(max-width:768px){
+  .form{
+    text-align: center;
+  }
+  .container{
+    margin-top: 10px;
+  }
+}
+.container-form{
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius:5px;
+  min-height: calc(100vh - 60px);
+  margin: 10px auto;
 }

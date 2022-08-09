@@ -1,4 +1,4 @@
-<div class="sidebar-header row " style="">
+<div class="sidebar-header row " >
   <div class="text-center col-12 mt-5">
     <h3>Eduardo Riccillo</h3>
     <p style="font-size: 10px; margin: 0;">Administrador</p>
@@ -7,9 +7,14 @@
   <div class="text-center col-12">
     <img  src="../../../assets/foto.png" alt="foto" class="foto mr-1">
   </div>
-
 </div>
-<div class="row m-0 p-0" >
+<div class="icon-menu" >
+  <button (click)="menu()" mat-icon-button color="secondary" aria-label="Example icon button with a menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+</div>
+<div class="sidebar-content" *ngIf="hidden">
+  <div class="row m-0 p-0" >
     <div class="d-flex subtitle">
       <mat-icon class="mr-1" >apps</mat-icon>
       <h3 class="m-0 " style="font-size: 14px;">Administrar </h3>
@@ -26,5 +31,5 @@
       <mat-icon class="mr-1" >settings</mat-icon>
       <h3 class="m-0 " style="font-size: 14px;">Configuracion </h3>
     </div>
-
+  </div>
 </div>
