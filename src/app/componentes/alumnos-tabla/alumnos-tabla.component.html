@@ -7,11 +7,11 @@
   <mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="nombre">
       <mat-header-cell *matHeaderCellDef ><span appEncabezados>NOMBRE</span></mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element |nombreApellido }} </mat-cell>
+      <mat-cell *matCellDef="let element" class="inactive"> {{element |nombreApellido }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="documento">
       <mat-header-cell *matHeaderCellDef><span appEncabezados>DOCUMENTO</span></mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.documento }} </mat-cell>
+      <mat-cell *matCellDef="let element" class="inactive"> {{element.documento }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="email">
       <mat-header-cell *matHeaderCellDef><span appEncabezados>EMAIL</span></mat-header-cell>

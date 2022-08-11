@@ -28,7 +28,7 @@ export class ContentComponent implements OnInit {
 
   constructor() { }
   ngOnInit(): void {
-    console.log(this.formulario);
+
   }
   activarForm(){
     if(this.showForm === true){

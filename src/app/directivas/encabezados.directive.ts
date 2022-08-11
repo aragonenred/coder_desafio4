@@ -6,7 +6,7 @@ import { Directive, ElementRef } from '@angular/core';
 export class EncabezadosDirective {
 
   constructor(private elemento: ElementRef) {
-    console.log(elemento);
+
     this.elemento.nativeElement.style.fontSize = '15px';
   }
 

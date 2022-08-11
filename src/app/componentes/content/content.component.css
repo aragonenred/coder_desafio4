@@ -27,7 +27,14 @@ h1, h2, h3, h4{
   min-width: calc(100vw - 30%);
   margin: 10px auto 20px auto;
 }
+.bgValid{
+  background-color: #c2f7af59;
+}
+.inactive{
+  background-color: #d7d0d0;
+  filter: grayscale(1);
 
+}
 .alert-text{
   color:red;
   font-size: 12px;

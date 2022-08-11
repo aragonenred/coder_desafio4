@@ -8,7 +8,7 @@
         <button mat-flat-button style="color:#32419c; padding-left:0; font-size:12px; font-family: 'Poppins', sans-serif;" (click)="activarForm()"><mat-icon aria-hidden="false" >add_circle</mat-icon> Agregar</button>
       </div>
     </div>
-    <form class="form" [formGroup]="formulario" (ngSubmit)="agregarAlumno()" *ngIf="showForm" >
+    <form class="form" [formGroup]="formulario" (ngSubmit)="agregarAlumno()" *ngIf="showForm" [ngClass]="formulario.status =='VALID'? 'bgValid':''" >
       <div class="form-group">
         <div class="row">
           <div class="col-lg-3 col-md-4">

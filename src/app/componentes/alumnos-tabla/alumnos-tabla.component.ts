@@ -28,6 +28,7 @@ export class AlumnosTablaComponent implements OnInit {
     {nombre: "Mauro Fernando", apellido: "Alvarez", documento: "44495678", email: "mauro@gmail.com.ar", nacimiento: "1998-09-01", pais: "Paraguay"}
     ];
 
+
   dataSource: MatTableDataSource<Alumnos> = new MatTableDataSource<Alumnos>(this.alumnos);
   @ViewChild(MatTable) tabla!: MatTable<Alumnos>;
 
@@ -58,7 +59,6 @@ export class AlumnosTablaComponent implements OnInit {
     });
 
   }
-
 
   editar(elemento: Alumnos){
     const dialogEdit = this.dialog.open(EditComponent,{width:'500px', data: elemento});
