@@ -3,6 +3,7 @@ form{
   border-radius: 10px;
   padding: 10px 30px;
   background-color: #f5f5f5;
+  transition: all ease 0.8s;
 
 }
 input, button{
