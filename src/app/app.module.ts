@@ -17,6 +17,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EdadPipe } from './pipes/edad.pipe';
 import { NombreApellidoPipe } from './pipes/nombre-apellido.pipe';
 import { PaisPipe } from './pipes/pais.pipe';
+import { EditComponent } from './componentes/edit/edit.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import { EncabezadosDirective } from './directivas/encabezados.directive';
+
 
 
 @NgModule({
@@ -29,7 +33,8 @@ import { PaisPipe } from './pipes/pais.pipe';
     EdadPipe,
     NombreApellidoPipe,
     PaisPipe,
-
+    EditComponent,
+    EncabezadosDirective
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import { PaisPipe } from './pipes/pais.pipe';
     MatSelectModule,
     MatTableModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

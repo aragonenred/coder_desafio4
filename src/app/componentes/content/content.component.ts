@@ -24,11 +24,19 @@ export class ContentComponent implements OnInit {
   });
 
   alumno!:Alumnos;
+  showForm:boolean = false;
 
   constructor() { }
   ngOnInit(): void {
+    console.log(this.formulario);
   }
-
+  activarForm(){
+    if(this.showForm === true){
+      this.showForm= false;
+    }else{
+      this.showForm= true;
+    }
+  }
   agregarAlumno(){
     this.alumno = {
             nombre: this.formulario.get('nombre')?.value,
@@ -39,11 +47,18 @@ export class ContentComponent implements OnInit {
             pais: this.formulario.get('pais')?.value
           };
     if(this.formulario.status =='VALID'){
+      console.log(this.formulario);
       this.tabla?.actualizaTabla(this.alumno);
       this.formulario.reset();
+
+
     }else{
       alert('Opps! hay datos que te faltan completar 😕')
     }
   }
+  reset(){
+    this.formulario.reset();
+  }
+
 
 }

@@ -6,25 +6,37 @@
 
   <mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="nombre">
-      <mat-header-cell *matHeaderCellDef > NOMBRE  </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef ><span appEncabezados>NOMBRE</span></mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element |nombreApellido }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="documento">
-      <mat-header-cell *matHeaderCellDef>DOCUMENTO</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef><span appEncabezados>DOCUMENTO</span></mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.documento }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef>EMAIL</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef><span appEncabezados>EMAIL</span></mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.email }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="nacimiento">
-      <mat-header-cell *matHeaderCellDef>EDAD</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef><span appEncabezados>EDAD</span></mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.nacimiento |edad }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="pais">
-      <mat-header-cell *matHeaderCellDef>PAIS</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef><span appEncabezados>PAIS</span></mat-header-cell>
       <mat-cell *matCellDef="let element"><img src="{{(element.pais |pais).getAttribute('src')}}" style="max-width:15px; margin-right: 5px;"> {{element.pais}}</mat-cell>
     </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="editar(element)">
+              <mat-icon style="color:#ffbc00e0">edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="eliminar(element)">
+              <mat-icon style="color:#d91313d1">delete</mat-icon>
+          </button>
+      </mat-cell>
+  </ng-container>
 
 
     <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
