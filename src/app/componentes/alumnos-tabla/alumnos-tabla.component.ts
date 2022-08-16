@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { EditComponent } from '../edit/edit.component';
 import { Alumnos } from '../../interfaces/alumnos';
+import { AlumnosService } from '../../services/alumnos.service';
+import { filter, map, Observable, Subscription } from 'rxjs';
 
 
 @Component({
@@ -16,32 +18,42 @@ export class AlumnosTablaComponent implements OnInit {
   @Input() parentMensaje?: any;
 
   columnas:string[] = ['nombre', 'documento', 'email', 'nacimiento', 'pais', 'acciones'];
-  alumnos: Alumnos[]=[
-    {nombre: "Maria Ana", apellido: "Fernandez", documento: "18653421", email: "ana.maria@gmail.com", nacimiento: "1988-01-23", pais: "Argentina"},
-    {nombre: "Juan Alberto", apellido: "Paez", documento: "23615987", email: "juan@gmail.com", nacimiento: "2001-09-10", pais: "Uruguay"},
-    {nombre: "Mauro Fernando", apellido: "Alvarez", documento: "24895678", email: "mauro@gmail.com.ar", nacimiento: "1995-09-11", pais: "Chile"},
-    {nombre: "Maria Ana", apellido: "Fernandez", documento: "18603421", email: "ana.maria@gmail.com", nacimiento: "2003-01-09", pais: "Argentina"},
-    {nombre: "Juan Alberto", apellido: "Paez", documento: "23615187", email: "juan@gmail.com", nacimiento: "1981-09-29", pais: "Bolivia"},
-    {nombre: "Mauro Fernando", apellido: "Alvarez", documento: "44895778", email: "mauro@gmail.com.ar", nacimiento: "1997-02-16", pais: "Paraguay"},
-    {nombre: "Maria Ana", apellido: "Fernandez", documento: "18613411", email: "ana.maria@gmail.com", nacimiento: "1998-09-01", pais: "Brasil"},
-    {nombre: "Juan Alberto", apellido: "Paez", documento: "23615480", email: "juan@gmail.com", nacimiento: "1998-09-01", pais: "Uruguay"},
-    {nombre: "Mauro Fernando", apellido: "Alvarez", documento: "44495678", email: "mauro@gmail.com.ar", nacimiento: "1998-09-01", pais: "Paraguay"}
-    ];
+  alumnos: Alumnos[]=[];
+
+  alumnosSuscription:Subscription;
 
 
-  dataSource: MatTableDataSource<Alumnos> = new MatTableDataSource<Alumnos>(this.alumnos);
+  dataSource!: MatTableDataSource<Alumnos> ;
   @ViewChild(MatTable) tabla!: MatTable<Alumnos>;
 
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog, private alumnosService:AlumnosService) {
 
+
+    this.alumnosSuscription = this.alumnosService.getAlumnosObservable()
+      .pipe(
+        map((alumnos: any[]) => alumnos.filter(alumno => alumno.habilitado === true))
+      ).subscribe((alumnos)=>{
+        console.log("Hubo cambios en mi observable");
+        this.alumnos = alumnos;
+        console.log(this.alumnos);
+
+      });
    }
 
   ngOnInit(): void {
 
+    this.dataSource =  new MatTableDataSource<Alumnos>(this.alumnos);
+
+
+  }
+
+  render(){
+    this.tabla.renderRows();
+    console.log("renderr");
   }
 
   actualizaTabla(alumno:Alumnos){
-    this.alumnos.push(alumno);
+    this.alumnosService.addAlumno(alumno);
     this.tabla.renderRows();
   }
 

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlumnosTablaComponent } from '../alumnos-tabla/alumnos-tabla.component';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Alumnos } from '../../interfaces/alumnos';
+import { AlumnosService } from '../../services/alumnos.service';
 
 
 @Component({
@@ -11,7 +12,8 @@ import { Alumnos } from '../../interfaces/alumnos';
 })
 export class ContentComponent implements OnInit {
 
-  paises:string[]= ['Argentina','Bolivia', 'Brasil','Chile', 'Paraguay', 'Uruguay' ];
+  paises:any=[];
+
   @ViewChild(AlumnosTablaComponent) tabla?: AlumnosTablaComponent;
 
   formulario: FormGroup = new FormGroup({
@@ -26,7 +28,17 @@ export class ContentComponent implements OnInit {
   alumno!:Alumnos;
   showForm:boolean = false;
 
-  constructor() { }
+  constructor(private alumnosService:AlumnosService) {
+    this.alumnosService.getPaisesPromise()
+      .then((paises)=>{
+        this.paises = paises;
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+
+
+   }
   ngOnInit(): void {
 
   }
@@ -44,7 +56,8 @@ export class ContentComponent implements OnInit {
             documento: this.formulario.get('documento')?.value,
             email: this.formulario.get('email')?.value,
             nacimiento: this.formulario.get('nacimiento')?.value,
-            pais: this.formulario.get('pais')?.value
+            pais: this.formulario.get('pais')?.value,
+            habilitado: true
           };
     if(this.formulario.status =='VALID'){
       console.log(this.formulario);

@@ -1,16 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription, Observable, Observer } from 'rxjs';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+ // timeLoginSuscripcion: Subscription;
+  timeLogin$:Observable<any>;
+
+  constructor(private loginService:LoginService) {
+
+    //this.timeLoginSuscripcion = this.loginService.timeLoginObservable.subscribe((time)=>{
+     // this.timeLogin = time;
+    //})
+    this.timeLogin$ = this.loginService.timeLoginObservable;
+   }
 
   ngOnInit(): void {
+
+
   }
+
+
   hidden:boolean = true;
 
   toggleMenu(hide:boolean){
@@ -23,6 +38,10 @@ export class SidebarComponent implements OnInit {
     }else{
       this.hidden = true;
     }
+  }
+
+  ngOnDestroy():void{
+    //this.timeLoginSuscripcion.unsubscribe();
   }
 
 }

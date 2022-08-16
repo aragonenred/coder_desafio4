@@ -5,4 +5,5 @@ export interface Alumnos {
   email: string;
   nacimiento:string;
   pais: string;
+  habilitado:boolean;
 }

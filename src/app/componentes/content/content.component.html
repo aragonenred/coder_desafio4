@@ -1,4 +1,5 @@
 <div class="container container-form" >
+
     <h3 style="color:rgba(0, 0, 0, 0.5); font-size: 12px; font-weight: 300; ">Administrar > <span style="font-weight: 600;">Alumnos</span></h3>
     <div [ngSwitch]="showForm">
       <div *ngSwitchCase="true">
@@ -14,7 +15,7 @@
           <div class="col-lg-3 col-md-4">
             <mat-form-field appearance="legacy">
               <mat-label>Nombre</mat-label>
-              <input matInput formControlName="nombre" type="text" placeholder="Eduardo Emmanuel" >
+              <input matInput formControlName="nombre" type="text" placeholder="Eduardo Emmanuel" value="Edu">
             </mat-form-field>
             <i class="fas fa-check-circle valid-icon" *ngIf="!formulario.get('nombre')?.errors"></i>
             <i class="fas fa-times-circle invalid-icon" *ngIf="formulario.get('nombre')?.errors && formulario.get('nombre')?.touched" ></i>
@@ -24,7 +25,7 @@
           <div class="col-lg-3 col-md-4">
             <mat-form-field appearance="legacy">
               <mat-label>Apellido</mat-label>
-              <input matInput formControlName="apellido" type="text" placeholder="Riccillo" >
+              <input matInput formControlName="apellido" type="text" placeholder="Riccillo" value="Edu" >
             </mat-form-field>
             <i class="fas fa-check-circle valid-icon" *ngIf="!formulario.get('apellido')?.errors"></i>
               <i class="fas fa-times-circle invalid-icon" *ngIf="formulario.get('apellido')?.errors && formulario.get('apellido')?.touched" ></i>
@@ -34,7 +35,7 @@
           <div class="col-lg-3 col-md-4">
             <mat-form-field appearance="legacy">
               <mat-label>Documento</mat-label>
-              <input matInput formControlName="documento" type="text" placeholder="33615758" maxlength="8">
+              <input matInput formControlName="documento" type="text" placeholder="33615758" maxlength="8" value="12345678">
             </mat-form-field>
             <i class="fas fa-check-circle valid-icon" *ngIf="!formulario.get('documento')?.errors"></i>
               <i class="fas fa-times-circle invalid-icon" *ngIf="formulario.get('documento')?.errors && formulario.get('documento')?.touched" ></i>
@@ -46,7 +47,7 @@
           <div class="col-lg-3 col-md-4">
             <mat-form-field appearance="legacy">
               <mat-label>e-mail</mat-label>
-              <input matInput formControlName="email" type="email" placeholder="tucorreo@mail.com" >
+              <input matInput formControlName="email" type="email" placeholder="tucorreo@mail.com" value="ara@d.com" >
             </mat-form-field>
             <i class="fas fa-check-circle valid-icon" *ngIf="!formulario.get('email')?.errors"></i>
             <i class="fas fa-times-circle invalid-icon" *ngIf="formulario.get('email')?.errors && formulario.get('email')?.touched" ></i>
@@ -61,7 +62,7 @@
           <div class="col-lg-3 col-md-4">
             <mat-form-field appearance= "legacy">
               <mat-label>Fecha de Nacimiento</mat-label>
-              <input matInput formControlName="nacimiento" type="date" >
+              <input matInput formControlName="nacimiento" type="date" value="12-12-1988" >
             </mat-form-field>
             <i class="fas fa-check-circle valid-icon" *ngIf="!formulario.get('nacimiento')?.errors"></i>
             <i class="fas fa-times-circle invalid-icon" *ngIf="formulario.get('nacimiento')?.errors && formulario.get('nacimiento')?.touched" ></i>
