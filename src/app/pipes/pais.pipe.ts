@@ -30,7 +30,7 @@ export class PaisPipe implements PipeTransform {
         break;
 
       case 'Uruguay':
-        html.setAttribute('src','https://img.geonames.org/flags/x/ar.gif');
+        html.setAttribute('src','https://img.geonames.org/flags/x/uy.gif');
         break;
 
       default:

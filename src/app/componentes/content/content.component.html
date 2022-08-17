@@ -15,7 +15,7 @@
           <div class="col-lg-3 col-md-4">
             <mat-form-field appearance="legacy">
               <mat-label>Nombre</mat-label>
-              <input matInput formControlName="nombre" type="text" placeholder="Eduardo Emmanuel" value="Edu">
+              <input matInput formControlName="nombre" type="text" placeholder="Eduardo Emmanuel">
             </mat-form-field>
             <i class="fas fa-check-circle valid-icon" *ngIf="!formulario.get('nombre')?.errors"></i>
             <i class="fas fa-times-circle invalid-icon" *ngIf="formulario.get('nombre')?.errors && formulario.get('nombre')?.touched" ></i>
@@ -25,7 +25,7 @@
           <div class="col-lg-3 col-md-4">
             <mat-form-field appearance="legacy">
               <mat-label>Apellido</mat-label>
-              <input matInput formControlName="apellido" type="text" placeholder="Riccillo" value="Edu" >
+              <input matInput formControlName="apellido" type="text" placeholder="Riccillo">
             </mat-form-field>
             <i class="fas fa-check-circle valid-icon" *ngIf="!formulario.get('apellido')?.errors"></i>
               <i class="fas fa-times-circle invalid-icon" *ngIf="formulario.get('apellido')?.errors && formulario.get('apellido')?.touched" ></i>
@@ -35,7 +35,7 @@
           <div class="col-lg-3 col-md-4">
             <mat-form-field appearance="legacy">
               <mat-label>Documento</mat-label>
-              <input matInput formControlName="documento" type="text" placeholder="33615758" maxlength="8" value="12345678">
+              <input matInput formControlName="documento" type="text" placeholder="33615758" maxlength="8">
             </mat-form-field>
             <i class="fas fa-check-circle valid-icon" *ngIf="!formulario.get('documento')?.errors"></i>
               <i class="fas fa-times-circle invalid-icon" *ngIf="formulario.get('documento')?.errors && formulario.get('documento')?.touched" ></i>
@@ -47,7 +47,7 @@
           <div class="col-lg-3 col-md-4">
             <mat-form-field appearance="legacy">
               <mat-label>e-mail</mat-label>
-              <input matInput formControlName="email" type="email" placeholder="tucorreo@mail.com" value="ara@d.com" >
+              <input matInput formControlName="email" type="email" placeholder="tucorreo@mail.com">
             </mat-form-field>
             <i class="fas fa-check-circle valid-icon" *ngIf="!formulario.get('email')?.errors"></i>
             <i class="fas fa-times-circle invalid-icon" *ngIf="formulario.get('email')?.errors && formulario.get('email')?.touched" ></i>
@@ -62,7 +62,7 @@
           <div class="col-lg-3 col-md-4">
             <mat-form-field appearance= "legacy">
               <mat-label>Fecha de Nacimiento</mat-label>
-              <input matInput formControlName="nacimiento" type="date" value="12-12-1988" >
+              <input matInput formControlName="nacimiento" type="date">
             </mat-form-field>
             <i class="fas fa-check-circle valid-icon" *ngIf="!formulario.get('nacimiento')?.errors"></i>
             <i class="fas fa-times-circle invalid-icon" *ngIf="formulario.get('nacimiento')?.errors && formulario.get('nacimiento')?.touched" ></i>

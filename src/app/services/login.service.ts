@@ -10,6 +10,7 @@ export class LoginService {
 
 
   constructor() {
+    //Observable con el timer para tiempo de conexion del usuario
     this.timeLoginObservable = new Observable<any>((suscriptor) => {
       let seconds:number = 0;
       let minutes:number = 0;
@@ -26,13 +27,13 @@ export class LoginService {
           hours++;
           minutes =0;
         }
-
      },1000)
 
       });
 
   }
 
+  //Funcion que coloca un cero a la izquierda para numeros de dos digitos
   fill(number:number){
       return "0".repeat(2 - number.toString().length) + number.toString();
   }

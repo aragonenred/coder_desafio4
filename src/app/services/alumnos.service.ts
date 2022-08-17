@@ -28,22 +28,20 @@ export class AlumnosService {
 
   constructor() {
     this.alumnosObservable = new Observable<any>((suscriptor)=>{
+      //Envío la lista de alumnos al iniciar
       suscriptor.next(this.alumnos);
 
+      //Me suscribo al Subject alumnosSubject y cuando se agrega o elimina un alumno genero un next para enviar la lista de alumnos actualizada.
       this.alumnosSubject.subscribe((alumnos)=>{
-        console.log("next del alumnos oservable");
-        console.log(alumnos);
         suscriptor.next(alumnos);
-
       });
-
 
     });
 
     this.alumnosSubject = new Subject();
-
   }
 
+  //Promesa para obtener la lista de paises
   getPaisesPromise(){
     let promise =  new Promise((resolve, reject)=>{
       if(this.paises.length >0){
@@ -59,12 +57,24 @@ export class AlumnosService {
     return promise;
   }
 
+
   getAlumnosObservable(){
     return this.alumnosObservable;
   }
 
+  //Funcion que recibe un objeto alumno y lo agrega a la lista. Luego genera un next en el subject para informar el cambio
   addAlumno(alumno:Alumnos){
     this.alumnos.push(alumno);
+    this.alumnosSubject.next(this.alumnos);
+  }
+
+  //Funcion que recibe un objeto alumno y lo elimina de la lista. Luego genera un next en el subject para informar el cambio
+  deleteAlumno(elemento:Alumnos){
+    this.alumnos.forEach((alumno, index) => {
+      if(alumno.documento === elemento.documento){
+        this.alumnos.splice(index, 1);
+      }
+    });
     this.alumnosSubject.next(this.alumnos);
   }
 

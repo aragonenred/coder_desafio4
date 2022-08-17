@@ -61,7 +61,7 @@ export class ContentComponent implements OnInit {
           };
     if(this.formulario.status =='VALID'){
       console.log(this.formulario);
-      this.tabla?.actualizaTabla(this.alumno);
+      this.tabla?.agregarAlumno(this.alumno);
       this.formulario.reset();
 
 
